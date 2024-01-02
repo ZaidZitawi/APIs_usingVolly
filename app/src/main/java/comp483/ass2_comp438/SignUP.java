@@ -18,6 +18,7 @@ public class SignUP extends AppCompatActivity {
     private EditText email;
     private EditText passS;
     private Button btnSignUp;
+    private boolean flage=false;
     ArrayList<User> arrayList = new ArrayList<>();
 
     @Override
@@ -28,11 +29,11 @@ public class SignUP extends AppCompatActivity {
         email = findViewById(R.id.email);
         passS = findViewById(R.id.passS);
         btnSignUp = findViewById(R.id.btnSignUp);
-//        loadData();
+        loadData();
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                clearData();
+                flage=true;
                 String username = name.getText().toString();
                 String Email = email.getText().toString();
                 String password = passS.getText().toString();
@@ -91,9 +92,9 @@ public class SignUP extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-
-        // Save the entered data to SharedPreferences
         saveData();
+        if (flage)
+            clearData();
     }
     private void saveData() {
         // Get the SharedPreferences instance
@@ -108,23 +109,25 @@ public class SignUP extends AppCompatActivity {
         // Apply the changes
         editor.apply();
     }
-//    private void loadData() {
-//        // Get the SharedPreferences instance
-//        SharedPreferences preferences = getSharedPreferences("SignUpData", MODE_PRIVATE);
-//
-//        // Load the data and set it to the corresponding EditText fields
-//        name.setText(preferences.getString("username", ""));
-//        email.setText(preferences.getString("email", ""));
-//        passS.setText(preferences.getString("password", ""));
-//    }
-//    private void clearData() {
-//        // Get the SharedPreferences instance
-//        SharedPreferences preferences = getSharedPreferences("SignUpData", MODE_PRIVATE);
-//        SharedPreferences.Editor editor = preferences.edit();
-//
-//        // Clear the saved data
-//        editor.clear();
-//        // Apply the changes
-//        editor.apply();
-//    }
+    private void loadData() {
+        // Get the SharedPreferences instance
+        SharedPreferences preferences = getSharedPreferences("SignUpData", MODE_PRIVATE);
+
+        // Load the data and set it to the corresponding EditText fields
+        name.setText(preferences.getString("username", ""));
+        email.setText(preferences.getString("email", ""));
+        passS.setText(preferences.getString("password", ""));
+    }
+    private void clearData() {
+        // Get the SharedPreferences instance
+        SharedPreferences preferences = getSharedPreferences("SignUpData", MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        // Clear the saved data
+        editor.remove("username");
+        editor.remove("email");
+        editor.remove("password");
+        editor.clear();
+        editor.apply();
+    }
 }
