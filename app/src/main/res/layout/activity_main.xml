@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity"
+    android:padding="10dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/gymrizz"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/usernameL"
+        android:hint="@string/username"
+        style="@style/edittextStyle" />
+
+    <EditText
+        android:id="@+id/passL"
+        style="@style/edittextStyle"
+        android:inputType="textPassword"
+        android:hint="@string/password" />
+
+    <CheckBox
+        android:id="@+id/chkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/remember_me" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:text="@string/log_in"
+        style="@style/btnStyle" />
+
+    <TextView
+        android:id="@+id/SignUpLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/signupLable"
+        android:textColor="@color/black"/>
+
+</LinearLayout>

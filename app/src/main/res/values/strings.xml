@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Ass2_comp438</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="signupLable">Don\'t have an account? Sign Up</string>
+    <string name="log_in">Log In</string>
+    <string name="logout">Logout</string>
+    <string name="companies_api">Companies API</string>
+    <string name="countries_api">Countries API</string>
+    <string name="iso">This API Gives the ISO Code for each country</string>
+    <string name="bigfourti">This API Show the Big 40 companies</string>
+    <string name="your_tasks">Your Tasks:</string>
+    <string name="big">Tap Load To View The Big 40 Companies</string>
+    <string name="countries">Show Countries</string>
+    <string name="go_hard_or_go_home">GO Hard or GO Home</string>
+    <string name="country_name">Enter Country Name</string>
+    <string name="pass">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="full_name">Full Name</string>
+</resources>
